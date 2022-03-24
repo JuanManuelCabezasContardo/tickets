@@ -12,6 +12,6 @@ if __name__ == "__main__":
     print("<------Instalando librerias ------>")
     for library in libraries:
         pip_install(library)
-    print("<------Crenado Base de datos----->")
+    print("<------Creando Base de datos----->")
     create_tables()
     print("<-----Instalacion completada------>")

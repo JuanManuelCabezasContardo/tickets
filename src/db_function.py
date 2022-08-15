@@ -9,7 +9,7 @@ def connect():
         return 0
     return conn
 
-def db_insert(insert_query):
+def db_insert(insert_query: str):
     try:
         conn = connect()
         conn.execute(insert_query)
@@ -19,7 +19,7 @@ def db_insert(insert_query):
         return 0
     return 1
 
-def db_select(query):
+def db_select(query: str):
     try:
         conn = connect()
         cur = conn.cursor()

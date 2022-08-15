@@ -4,7 +4,7 @@ from src.db_function import db_insert,db_select
 def Hello_world():
     return {"Hello": "World"} 
 
-def NewTicket(name):
+def NewTicket(name: str):
     from uuid import uuid4
     rand_token = uuid4()
     insert= """INSERT INTO TICKET(name,token,status) VALUES('%s','%s','creado')""" % (name,rand_token)
@@ -20,7 +20,7 @@ def Tickets():
     return {"response":salida}
 
 
-def status(state,id):
+def status(state: str,id: int):
     insert= """UPDATE TICKET SET status='%s' WHERE ID =%s""" % (state, id)
     salida = db_insert(insert)
     if (salida==1):
